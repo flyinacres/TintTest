@@ -10,9 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var willImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let originalImage =  UIImage(named: "IMG_0300.JPG")
+//        let tintedImage = originalImage?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        let tintedImage = originalImage?.imageWithRenderingMode(UIImageRenderingMode.Automatic)
+        
+        let imageView = UIImageView(image: tintedImage)
+        imageView.tintColor = UIColor.blueColor()
+        
+        willImage.image = imageView.image
+        
+
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
